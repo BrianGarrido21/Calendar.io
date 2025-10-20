@@ -1,66 +1,120 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 📅 Calendar.io
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![Estado del Proyecto](https://img.shields.io/badge/status-en_desarrollo-yellowgreen)
+![GitHub language count](https://img.shields.io/github/languages/count/BrianGarrido21/Calendar.io)
+![GitHub top language](https://img.shields.io/github/languages/top/BrianGarrido21/Calendar.io)
 
-## About Laravel
+Un clon funcional de Google Calendar construido como una aplicación web Full-Stack, permitiendo a los usuarios registrarse, iniciar sesión y gestionar sus eventos personales.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+![[Añade aquí una captura de pantalla de tu proyecto]](https://via.placeholder.com/800x400.png?text=Captura+de+pantalla+de+Calendar.io)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## ✨ Características Principales
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+* **Autenticación de Usuarios:** Sistema completo de registro e inicio de sesión usando JWT (JSON Web Tokens).
+* **Gestión de Eventos (CRUD):** Los usuarios pueden crear, ver, actualizar y eliminar eventos en su calendario.
+* **Vistas de Calendario:** Navegación fluida entre vistas de Mes, Semana y Día.
+* **Diseño Responsivo:** Interfaz adaptable a dispositivos móviles y de escritorio.
+* **Eventos "Todo el día":** Opción para marcar eventos que duran todo el día.
+* **[Añade otra característica]:** (Ej: Notificaciones por email, integración con Google, etc.)
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🛠️ Tecnologías Utilizadas
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Este proyecto utiliza una arquitectura MERN.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### **Frontend**
 
-## Laravel Sponsors
+* **[React.js](https://reactjs.org/)** (v18+)
+* **[React Router](https://reactrouter.com/)**: Para la navegación del lado del cliente.
+* **[React Big Calendar](http://jquense.github.io/react-big-calendar/)**: Librería principal para la visualización del calendario.
+* **[Axios](https://axios-http.com/)**: Para realizar peticiones HTTP al backend.
+* **[Sass / CSS Modules](https://sass-lang.com/)**: Para estilos avanzados y componentizados.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### **Backend**
 
-### Premium Partners
+* **[Node.js](https://nodejs.org/)**: Entorno de ejecución para el servidor.
+* **[Express.js](https://expressjs.com/)**: Framework para la construcción de la API REST.
+* **[MongoDB](https://www.mongodb.com/)**: Base de datos NoSQL para almacenar usuarios y eventos.
+* **[Mongoose](https://mongoosejs.com/)**: ODM para modelar los datos de MongoDB.
+* **[JSON Web Token (JWT)](https://jwt.io/)**: Para la autenticación y protección de rutas.
+* **[bcrypt.js](https://www.npmjs.com/package/bcrypt)**: Para el hasheo de contraseñas.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+---
 
-## Contributing
+## 🚀 Puesta en Marcha y Ejecución Local
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Sigue estos pasos para obtener una copia local del proyecto y ponerla en funcionamiento.
 
-## Code of Conduct
+### Prerrequisitos
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+* Node.js (v16 o superior)
+* npm (o yarn)
+* MongoDB (una instancia local o un cluster en [MongoDB Atlas](https://www.mongodb.com/cloud/atlas))
 
-## Security Vulnerabilities
+### Guía de Instalación
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1.  **Clona el repositorio:**
+    ```bash
+    git clone [https://github.com/BrianGarrido21/Calendar.io.git](https://github.com/BrianGarrido21/Calendar.io.git)
+    cd Calendar.io
+    ```
 
-## License
+2.  **Instala las dependencias del Backend:**
+    * (Asumiendo que tienes una carpeta `server` o `backend`)
+    ```bash
+    cd server
+    npm install
+    ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+3.  **Instala las dependencias del Frontend:**
+    * (Asumiendo que tienes una carpeta `client` o `frontend`)
+    ```bash
+    cd ../client
+    npm install
+    ```
+
+4.  **Configura las Variables de Entorno:**
+    * Crea un archivo `.env` en la carpeta `server` (o en la raíz del backend).
+    * Añade las siguientes variables (reemplaza con tus propios valores):
+    ```env
+    # Puerto del servidor
+    PORT=5000
+
+    # Tu string de conexión a MongoDB
+    MONGO_URI=mongodb+srv://<usuario>:<password>@cluster.mongodb.net/calendarDB?retryWrites=true&w=majority
+
+    # Una clave secreta para firmar los JWT
+    JWT_SECRET=tu_clave_secreta_muy_larga_y_segura
+    ```
+
+### Ejecución del Proyecto
+
+1.  **Inicia el Servidor (Backend):**
+    * Desde la carpeta `server`:
+    ```bash
+    npm run dev  # O 'npm start', revisa tu package.json
+    ```
+    * El servidor debería estar corriendo en `http://localhost:5000`
+
+2.  **Inicia el Cliente (Frontend):**
+    * Desde la carpeta `client`:
+    ```bash
+    npm start
+    ```
+    * La aplicación se abrirá automáticamente en `http://localhost:3000`
+
+---
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
+
+---
+
+## 👤 Contacto
+
+**Brian Garrido**
+
+* GitHub: [@BrianGarrido21](https://github.com/BrianGarrido21)
+* LinkedIn: [Tu Perfil de LinkedIn]
