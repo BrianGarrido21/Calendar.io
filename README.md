@@ -2,43 +2,39 @@
 
 ![Estado del Proyecto](https://img.shields.io/badge/status-en_desarrollo-yellowgreen)
 ![GitHub language count](https://img.shields.io/github/languages/count/BrianGarrido21/Calendar.io)
-![GitHub top language](https://img.shields.io/github/languages/top/BrianGarrido21/Calendar.io)
+![GitHub top language](https://img.shields.io/github/languages/top/BrianGarrido21/Calendar.io?color=F05032)
 
-Un clon funcional de Google Calendar construido como una aplicación web Full-Stack, permitiendo a los usuarios registrarse, iniciar sesión y gestionar sus eventos personales.
+Un clon funcional de Google Calendar construido como una aplicación web Full-Stack con el stack TALL (Tailwind, Alpine.js, Laravel, Livewire). Permite a los usuarios registrarse, iniciar sesión y gestionar sus eventos personales.
 
-![[Añade aquí una captura de pantalla de tu proyecto]](https://via.placeholder.com/800x400.png?text=Captura+de+pantalla+de+Calendar.io)
+![Captura de pantalla de Calendar.io](https://via.placeholder.com/800x400.png?text=Captura+de+pantalla+de+Calendar.io)
 
 ## ✨ Características Principales
 
-* **Autenticación de Usuarios:** Sistema completo de registro e inicio de sesión usando JWT (JSON Web Tokens).
+* **Autenticación de Usuarios:** Sistema completo de registro e inicio de sesión (probablemente usando Laravel Breeze o Jetstream).
 * **Gestión de Eventos (CRUD):** Los usuarios pueden crear, ver, actualizar y eliminar eventos en su calendario.
-* **Vistas de Calendario:** Navegación fluida entre vistas de Mes, Semana y Día.
-* **Diseño Responsivo:** Interfaz adaptable a dispositivos móviles y de escritorio.
-* **Eventos "Todo el día":** Opción para marcar eventos que duran todo el día.
-* **[Añade otra característica]:** (Ej: Notificaciones por email, integración con Google, etc.)
+* **Componentes Reactivos:** Interfaz de usuario dinámica construida con Livewire, eliminando la necesidad de escribir JavaScript complejo.
+* **Diseño Responsivo:** Interfaz adaptable a dispositivos móviles y de escritorio gracias a Tailwind CSS.
+* **Vistas de Calendario:** Navegación fluida entre diferentes vistas (Mes, Semana, Día).
 
 ---
 
 ## 🛠️ Tecnologías Utilizadas
 
-Este proyecto utiliza una arquitectura MERN.
+Este proyecto está construido con una arquitectura basada en Laravel.
 
-### **Frontend**
+### **Backend (Servidor)**
 
-* **[React.js](https://reactjs.org/)** (v18+)
-* **[React Router](https://reactrouter.com/)**: Para la navegación del lado del cliente.
-* **[React Big Calendar](http://jquense.github.io/react-big-calendar/)**: Librería principal para la visualización del calendario.
-* **[Axios](https://axios-http.com/)**: Para realizar peticiones HTTP al backend.
-* **[Sass / CSS Modules](https://sass-lang.com/)**: Para estilos avanzados y componentizados.
+* **[Laravel](https://laravel.com/)**: Framework de PHP para el desarrollo de la API REST y la lógica de negocio.
+* **[Livewire](https://laravel-livewire.com/)**: Framework full-stack para construir interfaces dinámicas directamente en PHP/Blade.
+* **[PHP](https://www.php.net/)**: Lenguaje de programación del lado del servidor.
+* **[MySQL](https://www.mysql.com/)**: Base de datos relacional para almacenar usuarios y eventos.
+* **Autenticación:** (Menciona si usas Laravel Breeze, Jetstream o Sanctum).
 
-### **Backend**
+### **Frontend (Cliente)**
 
-* **[Node.js](https://nodejs.org/)**: Entorno de ejecución para el servidor.
-* **[Express.js](https://expressjs.com/)**: Framework para la construcción de la API REST.
-* **[MongoDB](https://www.mongodb.com/)**: Base de datos NoSQL para almacenar usuarios y eventos.
-* **[Mongoose](https://mongoosejs.com/)**: ODM para modelar los datos de MongoDB.
-* **[JSON Web Token (JWT)](https://jwt.io/)**: Para la autenticación y protección de rutas.
-* **[bcrypt.js](https://www.npmjs.com/package/bcrypt)**: Para el hasheo de contraseñas.
+* **[Tailwind CSS](https://tailwindcss.com/)**: Framework de CSS utility-first para un diseño rápido y moderno.
+* **[Alpine.js](https://alpinejs.dev/)**: Framework de JavaScript minimalista para pequeñas interacciones (incluido con Livewire/Jetstream).
+* **[Blade](https://laravel.com/docs/blade)**: Motor de plantillas de Laravel.
 
 ---
 
@@ -48,9 +44,10 @@ Sigue estos pasos para obtener una copia local del proyecto y ponerla en funcion
 
 ### Prerrequisitos
 
-* Node.js (v16 o superior)
-* npm (o yarn)
-* MongoDB (una instancia local o un cluster en [MongoDB Atlas](https://www.mongodb.com/cloud/atlas))
+* PHP (v8.1 o superior)
+* Composer
+* Node.js y npm (o yarn)
+* Una base de datos (ej. MySQL)
 
 ### Guía de Instalación
 
@@ -60,49 +57,48 @@ Sigue estos pasos para obtener una copia local del proyecto y ponerla en funcion
     cd Calendar.io
     ```
 
-2.  **Instala las dependencias del Backend:**
-    * (Asumiendo que tienes una carpeta `server` o `backend`)
+2.  **Instala dependencias de PHP:**
     ```bash
-    cd server
+    composer install
+    ```
+
+3.  **Instala dependencias de Node.js:**
+    ```bash
     npm install
     ```
 
-3.  **Instala las dependencias del Frontend:**
-    * (Asumiendo que tienes una carpeta `client` o `frontend`)
+4.  **Configura tu entorno:**
+    * Copia el archivo de entorno de ejemplo y configúralo.
     ```bash
-    cd ../client
-    npm install
+    cp .env.example .env
+    ```
+    * Genera la clave de la aplicación:
+    ```bash
+    php artisan key:generate
     ```
 
-4.  **Configura las Variables de Entorno:**
-    * Crea un archivo `.env` en la carpeta `server` (o en la raíz del backend).
-    * Añade las siguientes variables (reemplaza con tus propios valores):
-    ```env
-    # Puerto del servidor
-    PORT=5000
+5.  **Configura tu base de datos:**
+    * Abre el archivo `.env` y añade los datos de tu base de datos (DB_DATABASE, DB_USERNAME, DB_PASSWORD).
 
-    # Tu string de conexión a MongoDB
-    MONGO_URI=mongodb+srv://<usuario>:<password>@cluster.mongodb.net/calendarDB?retryWrites=true&w=majority
-
-    # Una clave secreta para firmar los JWT
-    JWT_SECRET=tu_clave_secreta_muy_larga_y_segura
+6.  **Ejecuta las migraciones:**
+    * Esto creará las tablas de usuarios y eventos en tu base de datos.
+    ```bash
+    php artisan migrate
     ```
 
 ### Ejecución del Proyecto
 
-1.  **Inicia el Servidor (Backend):**
-    * Desde la carpeta `server`:
+1.  **Inicia el servidor de desarrollo de Vite (para CSS/JS):**
     ```bash
-    npm run dev  # O 'npm start', revisa tu package.json
+    npm run dev
     ```
-    * El servidor debería estar corriendo en `http://localhost:5000`
 
-2.  **Inicia el Cliente (Frontend):**
-    * Desde la carpeta `client`:
+2.  **Inicia el servidor de Laravel (en otra terminal):**
     ```bash
-    npm start
+    php artisan serve
     ```
-    * La aplicación se abrirá automáticamente en `http://localhost:3000`
+
+* La aplicación estará disponible en `http://localhost:8000` (o el puerto que indique `artisan serve`).
 
 ---
 
@@ -114,7 +110,7 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para má
 
 ## 👤 Contacto
 
-**Brian Garrido**
+**Brian Garrido Picón**
 
 * GitHub: [@BrianGarrido21](https://github.com/BrianGarrido21)
-* LinkedIn: [Tu Perfil de LinkedIn]
+* LinkedIn: [https://www.linkedin.com/in/brian-garrido-picón-6a0b65217/](https://www.linkedin.com/in/brian-garrido-picón-6a0b65217/)
