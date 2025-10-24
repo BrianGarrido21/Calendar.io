@@ -6,7 +6,7 @@
 
 Un clon funcional de Google Calendar construido como una aplicación web Full-Stack con el stack TALL (Tailwind, Alpine.js, Laravel, Livewire). Permite a los usuarios registrarse, iniciar sesión y gestionar sus eventos personales.
 
-![Captura de pantalla de Calendar.io](https://via.placeholder.com/800x400.png?text=Captura+de+pantalla+de+Calendar.io)
+
 
 ## ✨ Características Principales
 
@@ -15,6 +15,8 @@ Un clon funcional de Google Calendar construido como una aplicación web Full-St
 * **Componentes Reactivos:** Interfaz de usuario dinámica construida con Livewire, eliminando la necesidad de escribir JavaScript complejo.
 * **Diseño Responsivo:** Interfaz adaptable a dispositivos móviles y de escritorio gracias a Tailwind CSS.
 * **Vistas de Calendario:** Navegación fluida entre diferentes vistas (Mes, Semana, Día).
+  
+<img width="1317" height="793" alt="Screenshot 2025-10-24 at 08 55 04" src="https://github.com/user-attachments/assets/fe7e55ba-0fe4-45da-b642-bb26d0c053a1" />
 
 ---
 
